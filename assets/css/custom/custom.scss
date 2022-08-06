@@ -1,0 +1,955 @@
+#__nuxt {
+  padding: 0px;
+}
+// TEAL TEMPLATE
+// $teal-box-color: rgb(155, 214, 214);
+// $teal-body-color: rgb(231, 243, 243);
+// $teal-text-color: rgb(45, 151, 151);
+// $teal-box-color-2: rgb(155, 214, 214);
+// $teal-btn-hover: rgb(75, 148, 148);
+// $teal-border-bottom-color: rgb(124, 194, 194);
+
+//RED TEMPLATES
+// $teal-box-color: rgb(214, 155, 163);
+// $teal-body-color: rgb(243, 231, 234);
+// $teal-text-color: rgb(151, 45, 68);
+// $teal-box-color-2: rgb(214, 155, 160);
+// $teal-btn-hover: rgb(148, 75, 79);
+// $teal-border-bottom-color: rgb(194, 124, 133);
+//$teal-body-color-3: rgb(235, 217, 220);
+
+//LIGHT BLUE TEMPLATES
+$teal-box-color: rgb(155, 179, 214);
+$teal-body-color: rgb(231, 236, 243);
+$teal-text-color: rgb(45, 82, 151);
+$teal-box-color-2: rgb(155, 169, 214);
+$teal-btn-hover: rgb(75, 104, 148);
+$teal-border-bottom-color: rgb(124, 152, 194);
+$teal-body-color-3: rgb(217, 222, 235);
+$box-shadow: 0 1px 3px 1px rgb(184, 184, 207);
+// $background-gradient: linear-gradient(
+//   90deg,
+//   rgba(168, 193, 241, 1) 0%,
+//   rgba(125, 155, 217, 0.9304096638655462) 42%,
+//   rgba(77, 137, 193, 1) 100%
+// );
+// $background-gradient: linear-gradient(
+//   90deg,
+//   rgba(130, 129, 200, 1) 0%,
+//   rgba(82, 149, 224, 0.9304096638655462) 42%,
+//   rgba(129, 90, 162, 0.6558998599439776) 100%
+// );
+
+body {
+  background-color: $teal-body-color;
+  height: 100%;
+}
+@mixin background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border-radius: 50%;
+}
+.small-title {
+  text-align: center;
+  font-style: italic;
+  font-size: 13px;
+  padding: 8px;
+  // color: $teal-text-color;
+  color: gray;
+}
+
+.web-body {
+  .web-left,
+  .web-right {
+    width: 200px;
+    height: 100%;
+    // background-color: rgb(217, 235, 235);
+    //background-color: $teal-body-color-3;
+    margin: 6px;
+    position: relative;
+    // box-shadow: $box-shadow;
+    .p-fixed {
+      position: fixed;
+      height: auto;
+    }
+    div {
+      width: 190px;
+    }
+  }
+  .web-left {
+    //border-radius: 50px 10px;
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
+  }
+  .web-right {
+    //border-radius: 10px 50px;
+    @media only screen and (max-width: 1262px) {
+      display: none;
+    }
+  }
+  .web-center {
+    flex: 50%;
+    // background-color: rgb(227, 245, 245);//teal template
+    //background-color: rgb(245, 227, 232);//red template
+    background-color: rgb(227, 235, 245); //light blue template
+    position: relative;
+  }
+}
+
+.side-profile-box {
+  //background-color: $teal-box-color;
+  //background-image: $background-gradient;
+  height: 180px;
+  border-radius: 50px 10px;
+  margin: 6px;
+  box-shadow: $box-shadow;
+  background-color: $teal-body-color-3;
+  .pic {
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+  }
+  .profile-text {
+    text-align: center;
+    padding: 6px;
+    // color: teal;
+    //color: rgb(128, 0, 32);
+    color: $teal-btn-hover;
+    a {
+      font-size: 16px;
+      // color: teal;
+      //color: rgb(128, 0, 32);
+      color: $teal-btn-hover;
+    }
+  }
+}
+
+@mixin main-menu-active {
+  color: lavender;
+  border-radius: 6px;
+  background-color: rgb(168, 168, 201);
+}
+.main-menu {
+  // background-color: rgb(189, 226, 226);//blue template
+  //background-color: rgb(226, 189, 191);//red template
+  //background-color: rgb(189, 199, 226); //light blue template
+  height: 40px;
+  align-items: center;
+  display: flex;
+  padding-left: 3px;
+  //border-radius: 0 0 50px 0;
+  border-radius: 0 0 10px 10px;
+  //border-bottom: 1px solid rgb(179, 206, 206);
+  box-shadow: $box-shadow;
+
+  //POSITION FIXED
+  //position: fixed;
+  //background-color: $teal-body-color-3;
+
+  .m-h-list {
+    width: 100%;
+
+    .m-li {
+      padding: 3px;
+      border-radius: 6px;
+      margin: 3px;
+      a {
+        // color: teal;
+        //color: rgb(128, 0, 11);
+        color: $teal-btn-hover;
+        text-decoration: none;
+        padding: 6px;
+        font-size: 15px;
+        &:hover {
+          @include main-menu-active();
+        }
+      }
+
+      .router-link-exact-active {
+        @include main-menu-active();
+      }
+    }
+  }
+}
+
+.main-top-menu {
+  height: 50px;
+  //background-color: $teal-box-color;
+  //background-image: $background-gradient;
+  background-color: rgb(189, 199, 226); //light blue template
+  // color: teal;
+  // color: rgb(128, 0, 28);
+  color: $teal-btn-hover;
+  //border-radius: 50px 0px 0 0;
+  border-radius: 10px 10px 0 0;
+  margin-top: 8px;
+  box-shadow: $box-shadow;
+  div {
+    padding-left: 20px;
+    height: 50px;
+    flex: 45%;
+    align-items: center;
+    display: flex;
+    .menu-bar,
+    .pin {
+      cursor: pointer;
+      padding: 6px;
+
+      &:hover {
+        // background-color: $teal-btn-hover;
+        // color: lavender;
+        @include main-menu-active();
+      }
+    }
+    .menu-bar {
+      font-size: 20px;
+      border-radius: 26px;
+    }
+    .pin {
+      font-size: 13px;
+      border-radius: 6px;
+    }
+  }
+  .right-menu {
+    display: flex;
+    justify-content: right;
+    padding-right: 8px;
+    .m-h-list {
+      li {
+        padding: 6px;
+        border-radius: 8px;
+        margin-left: 3px;
+        &:hover {
+          //background-color: $teal-btn-hover;
+          cursor: pointer;
+          //color: lavender;
+          @include main-menu-active();
+        }
+      }
+    }
+  }
+}
+
+.ads-box {
+  padding: 8px;
+  //background-color: $teal-box-color;
+  //background-image: $background-gradient;
+  background-color: $teal-body-color-3;
+  box-shadow: $box-shadow;
+  height: 250px;
+  //border-bottom: 1px solid $teal-border-bottom-color;
+  //border-radius: 10px 50px;
+  border-radius: 30px;
+  margin: 6px;
+  text-align: center;
+  height: auto;
+  img {
+    width: 100%;
+    //border-radius: 10px 50px;
+    border-radius: 10px 10px 30px 30px;
+    box-shadow: 0px 1px 1px 1px rgb(128, 177, 177);
+    opacity: 0.5;
+  }
+  &:hover {
+    padding: 6px;
+    cursor: pointer;
+  }
+}
+
+.vertical-menu-1 {
+  margin-top: 8px;
+  li {
+    line-height: 28px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin: 4px;
+    i {
+      margin-right: 6px;
+    }
+    &:hover {
+      @include main-menu-active();
+    }
+    a {
+      // color: teal;
+      //color: rgb(128, 0, 43);
+      color: $teal-btn-hover;
+      text-decoration: none;
+      padding: 6px;
+    }
+  }
+  li.red {
+    a {
+      color: rgb(151, 121, 121);
+    }
+    &:hover {
+      a {
+        color: red;
+        //color: $teal-btn-hover;
+      }
+    }
+  }
+  li.active {
+    @include main-menu-active();
+  }
+}
+
+@mixin post_box {
+  background-color: $teal-body-color-3;
+  height: auto;
+  margin: 6px;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: $box-shadow;
+  margin: 14px 6px;
+  &:hover {
+    //background-color: rgb(219, 204, 204);
+    background-color: rgb(204, 209, 219);
+  }
+}
+@mixin sells-info {
+  padding: 3px;
+  border-radius: 8px;
+  margin-right: 4px;
+  font-size: 12px;
+}
+.post-sells {
+  @include post_box();
+  .loc {
+    button {
+      border: none;
+    }
+    button:nth-child(1) {
+      background-color: rgb(175, 115, 135);
+      color: rgb(248, 248, 248);
+      border-radius: 8px 0 0 8px;
+    }
+    button:nth-child(2) {
+      background-color: rgb(176, 208, 238);
+      color: rgb(82, 108, 156);
+      border-radius: 0px 8px 8px 0;
+    }
+  }
+  .name {
+    color: rgb(235, 238, 240);
+    background-color: rgb(80, 118, 177);
+    @include sells-info();
+  }
+  .rs {
+    color: rgb(145, 33, 61);
+    background-color: rgb(204, 140, 151);
+    font-weight: bold;
+    @include sells-info();
+  }
+  .yrs {
+    color: rgb(16, 16, 107);
+    background-color: rgb(140, 178, 204);
+    @include sells-info();
+  }
+  .product {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 6px 3px;
+    border-radius: 6px;
+  }
+  .btns {
+    text-align: center;
+    .view,
+    .seller {
+      border: none;
+      margin: 4px;
+      padding: 6px;
+      cursor: pointer;
+      color: lavender;
+      border-radius: 6px;
+    }
+    .view {
+      background-color: rgb(54, 54, 153);
+      &:hover {
+        background-color: rgb(90, 90, 160);
+      }
+    }
+    .seller {
+      background-color: rgb(35, 116, 55);
+      &:hover {
+        background-color: rgb(67, 133, 72);
+      }
+    }
+  }
+}
+.post-desire {
+  @include post_box();
+  .loc {
+    button {
+      border: none;
+    }
+    button:nth-child(1) {
+      background-color: rgb(115, 175, 130);
+      color: rgb(248, 248, 248);
+      border-radius: 8px 0 0 8px;
+    }
+    button:nth-child(2) {
+      background-color: rgb(176, 208, 238);
+      color: rgb(156, 82, 98);
+      border-radius: 0px 8px 8px 0;
+    }
+  }
+  .text {
+    p {
+      padding: 6px;
+      .words {
+        font-weight: bold;
+        padding: 6px;
+        border-radius: 6px;
+      }
+      .words.buy {
+        color: rgb(235, 220, 220);
+        background-color: rgb(185, 94, 124);
+      }
+      .words.dating {
+        color: rgb(238, 233, 240);
+        background-color: rgb(176, 93, 187);
+      }
+      .words.rents {
+        color: rgb(225, 236, 226);
+        background-color: rgb(94, 185, 94);
+      }
+      .words.professional {
+        color: rgb(225, 230, 236);
+        background-color: rgb(94, 126, 185);
+      }
+    }
+  }
+  .status {
+    p {
+      font-size: 13px;
+      color: rgb(112, 96, 96);
+      padding: 6px;
+      a {
+        color: rgb(175, 26, 26);
+        font-weight: bold;
+      }
+    }
+  }
+}
+.post-announce {
+  @include post_box();
+  .loc {
+    button {
+      border: none;
+    }
+    button:nth-child(1) {
+      background-color: rgb(115, 143, 175);
+      color: rgb(248, 248, 248);
+      border-radius: 8px 0 0 8px;
+    }
+    button:nth-child(2) {
+      background-color: rgb(176, 208, 238);
+      color: rgb(156, 82, 98);
+      border-radius: 0px 8px 8px 0;
+    }
+  }
+  .text {
+    font-size: 14px;
+    color: gray;
+    padding: 6px;
+  }
+  .product {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 6px 3px;
+    border-radius: 6px;
+  }
+}
+@mixin write_post_box {
+  text-align: center;
+  height: auto;
+  padding: 6px;
+  background-color: $teal-body-color-3;
+  margin: 14px 6px;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+}
+.post-your-desire {
+  @include write_post_box();
+  button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(66, 117, 211);
+    &:hover {
+      color: rgb(26, 64, 170);
+      background-color: rgb(128, 150, 223);
+    }
+  }
+}
+
+.post-info {
+  height: auto;
+  p {
+    padding: 6px;
+    font-size: 12px;
+    color: gray;
+  }
+}
+.post-your-sells {
+  @include write_post_box();
+  button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(211, 66, 66);
+    &:hover {
+      color: rgb(170, 26, 105);
+      background-color: rgb(223, 128, 191);
+    }
+  }
+}
+.post-your-announce {
+  @include write_post_box();
+  button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(19, 109, 31);
+    &:hover {
+      color: rgb(26, 170, 34);
+      background-color: rgb(182, 223, 182);
+    }
+  }
+}
+
+.users-list {
+  display: flex;
+  flex-direction: row;
+  @include post_box();
+  .r1,
+  .r2 {
+    padding: 6px;
+  }
+  .r1 {
+    flex: 100px;
+    .img {
+      height: 80px;
+      width: 80px;
+      @include background-image();
+    }
+  }
+  .r2 {
+    flex: 80%;
+    color: $teal-btn-hover;
+    p {
+      font-size: 14px;
+      .profession {
+        background-color: teal;
+        color: lavender;
+        border-radius: 6px;
+        padding: 1px 2px;
+        font-size: 12px;
+      }
+      button {
+        border: none;
+        background-color: gray;
+        padding: 4px;
+        border-radius: 6px;
+        margin: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        color: lavender;
+      }
+      .details {
+        background-color: rgb(58, 118, 146);
+        &:hover {
+          background-color: rgb(104, 158, 184);
+        }
+      }
+      .message {
+        background-color: rgb(92, 90, 100);
+        &:hover {
+          background-color: rgb(164, 169, 172);
+        }
+      }
+      .fav {
+        background-color: rgb(146, 58, 77);
+        &:hover {
+          background-color: rgb(184, 104, 148);
+        }
+      }
+    }
+  }
+}
+
+.trends {
+  height: auto;
+  table {
+    tr,
+    td,
+    th {
+      border: 1px solid rgb(178, 178, 199);
+      padding: 6px;
+      font-size: 13px;
+      a {
+        color: rgb(39, 130, 167);
+        font-weight: bold;
+      }
+    }
+    border: 1px solid rgb(164, 164, 180);
+    border-collapse: collapse;
+    width: 96%;
+    @include post_box();
+    tr {
+      td {
+        text-align: center;
+      }
+      td:nth-child(1) {
+        width: 20px;
+      }
+    }
+  }
+}
+
+.w-title {
+  height: auto;
+  margin: 6px;
+  h3 {
+    padding: 6px;
+  }
+}
+
+.trends_ads {
+  height: auto;
+  padding: 6px;
+  margin: 6px;
+  ul {
+    list-style-type: none;
+    padding-left: 40px;
+    margin-top: 0px;
+    li {
+      padding: 4px;
+      border-radius: 6px;
+      position: relative;
+      a {
+        color: gray;
+        font-size: 12px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+        i {
+          margin-right: 6px;
+          background-color: gray;
+          padding: 3px;
+          border-radius: 6px;
+          color: lavender;
+          position: absolute;
+          left: -20px;
+          top: 8px;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  height: auto;
+  div {
+    height: auto;
+  }
+}
+
+// MODAL FOR ADDING DESIRE START
+.add-desire-modal {
+  //$box-border-color: rgb(99, 99, 131);
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+  $modal-border-light-blue: rgb(39, 130, 167);
+  div {
+    padding: 8px;
+  }
+  .modal-head {
+    background-color: $teal-body-color !important;
+    //border: 2px solid $box-border-color;
+    border-radius: 8px 8px 0 0;
+    //border-bottom: none;
+    .modal-close {
+      padding: 3px 8px;
+      border: none;
+      cursor: pointer;
+    }
+    h2 {
+      padding-left: 10px;
+      color: $modal-border-light-blue;
+    }
+  }
+  .modal-content {
+    background-color: $teal-body-color !important;
+
+    //border-left: 2px solid $box-border-color;
+    //border-right: 2px solid $box-border-color;
+    table {
+      width: 100%;
+      .looking_for {
+        padding: 6px;
+        font-size: 13px;
+        font-weight: bold;
+        color: lavender;
+        background-color: $modal-border-light-blue;
+        border-radius: 6px 3px;
+      }
+      select {
+        padding: 6px;
+        border: 1px solid $modal-border-light-blue;
+        outline: none;
+        border-radius: 6px;
+        option {
+          padding: 6px;
+        }
+      }
+      textarea {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid $modal-border-light-blue;
+        outline: none;
+        border-radius: 6px;
+      }
+    }
+  }
+  .modal-foot {
+    background-color: $teal-body-color !important;
+    //border: 2px solid $box-border-color;
+    border-radius: 0 0 8px 8px;
+    text-align: right;
+    .submit {
+      padding: 6px;
+      border: 1px solid $modal-border-light-blue;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: $modal-border-light-blue;
+      margin: 4px;
+      &:hover {
+        background-color: $modal-border-light-blue;
+        color: lavender;
+      }
+    }
+    .btn {
+      $btn-color-gray: gray;
+      padding: 6px;
+      border: 1px solid $btn-color-gray;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: $btn-color-gray;
+      font-size: 12px;
+      margin: 4px;
+      &:hover {
+        background-color: $btn-color-gray;
+        color: lavender;
+      }
+    }
+  }
+}
+
+.add-sell-modal {
+  //$box-border-color: rgb(99, 99, 131);
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+  $modal-border-light-blue: rgb(167, 39, 82);
+  div {
+    padding: 8px;
+  }
+  .modal-head {
+    background-color: $teal-body-color !important;
+    //border: 2px solid $box-border-color;
+    border-radius: 8px 8px 0 0;
+    //border-bottom: none;
+    .modal-close {
+      padding: 3px 8px;
+      border: none;
+      cursor: pointer;
+    }
+    h2 {
+      padding-left: 10px;
+      color: $modal-border-light-blue;
+    }
+  }
+  .modal-content {
+    background-color: $teal-body-color !important;
+
+    //border-left: 2px solid $box-border-color;
+    //border-right: 2px solid $box-border-color;
+    table {
+      width: 100%;
+      .looking_for {
+        padding: 6px;
+        font-size: 13px;
+        font-weight: bold;
+        color: lavender;
+        background-color: $modal-border-light-blue;
+        border-radius: 6px 3px;
+      }
+      select {
+        padding: 6px;
+        border: 1px solid $modal-border-light-blue;
+        outline: none;
+        border-radius: 6px;
+        option {
+          padding: 6px;
+        }
+      }
+      textarea {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid $modal-border-light-blue;
+        outline: none;
+        border-radius: 6px;
+      }
+    }
+  }
+  .modal-foot {
+    background-color: $teal-body-color !important;
+    //border: 2px solid $box-border-color;
+    border-radius: 0 0 8px 8px;
+    text-align: right;
+    .submit {
+      padding: 6px;
+      border: 1px solid $modal-border-light-blue;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: $modal-border-light-blue;
+      margin: 4px;
+      &:hover {
+        background-color: $modal-border-light-blue;
+        color: lavender;
+      }
+    }
+    .btn {
+      $btn-color-gray: gray;
+      padding: 6px;
+      border: 1px solid $btn-color-gray;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: $btn-color-gray;
+      font-size: 12px;
+      margin: 4px;
+      &:hover {
+        background-color: $btn-color-gray;
+        color: lavender;
+      }
+    }
+  }
+}
+
+.fixed-menu {
+  position: fixed;
+  left: 0%;
+  width: 100%;
+  height: auto;
+  top: 0;
+  display: none;
+  div {
+    height: auto;
+  }
+}
+
+.register {
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 60%;
+  }
+  padding: 6px;
+  margin: auto;
+  box-shadow: $box-shadow;
+  height: auto;
+  margin-top: 30px;
+  border-radius: 8px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    padding-left: 6px;
+    input,
+    select {
+      font-size: 16px;
+      padding: 8px;
+    }
+    select {
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      option {
+        padding: 6px;
+      }
+    }
+  }
+  .form_submit {
+    text-align: center;
+    padding: 6px;
+    margin-top: 20px;
+    button {
+      padding: 6px;
+      border: 1px solid rgb(15, 82, 15);
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: rgb(37, 110, 37);
+      font-size: 19px;
+      margin: 4px;
+      &:hover {
+        background-color: rgb(15, 82, 15);
+        color: lavender;
+      }
+    }
+  }
+  .forgot_pas {
+    display: flex;
+    flex-direction: row;
+    div {
+      width: 100%;
+      padding: 6px;
+      a {
+        font-size: 13px;
+      }
+    }
+    div:nth-child(1) {
+      a {
+        color: rgb(190, 46, 27);
+      }
+      .login {
+        color: rgb(18, 100, 45);
+        font-weight: bold;
+      }
+    }
+    div:nth-child(2) {
+      text-align: right;
+      a {
+        color: rgb(46, 153, 19);
+        font-weight: bold;
+      }
+    }
+  }
+}
